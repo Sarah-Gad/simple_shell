@@ -20,7 +20,7 @@ int cmp_n_2st(const char *st_f1, const char *st_s2, size_t sp_fn)
 }
 /**
  * dp_t_st - a function that I used to duplicate the input str.
- * @stct_ptr: prt to the struct I created
+ * @stct_ptr: prt to the struct  created
  * @in_st: pointer tio the string to duplicte.
  * Return: pointer to the new string.
 */

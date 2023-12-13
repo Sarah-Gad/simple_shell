@@ -1,6 +1,6 @@
 #include "myshelly.h"
 /**
- * s_split - a function that I used to split a string.
+ * s_split - a function that  used to split a string.
  * @delchrs: pointer to the delimiter used to split the string.
  * @stsplt: pointer to the string that I want to split
  * Return: it returns pointer to the splited string.

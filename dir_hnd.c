@@ -1,7 +1,7 @@
 #include "myshelly.h"
 /**
  * dir_ch - a function that I used to change the current dir.
- * @st_pt: ppinter to the structure that I created.
+ * @st_pt: pinter to the structure that I created.
  * Return: it returns 0 or -1.
 */
 int dir_ch(strugy *st_pt)

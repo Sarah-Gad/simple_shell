@@ -4,7 +4,7 @@
  * @memo_pt: the memory block.
  * @curr_s: the current size of the memo.
  * @nw_s: the new size of the memo
- * Return: nothing.
+ * Return: nothing
 */
 void *memo_res(void *memo_pt, unsigned int curr_s, unsigned int nw_s)
 {

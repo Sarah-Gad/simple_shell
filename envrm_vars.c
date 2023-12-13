@@ -1,6 +1,6 @@
 #include "myshelly.h"
 /**
- * s_envrm - a function that I used to get
+ * s_envrm - a function that  used to get
  * the value of an envirnmment variable.
  * @a_str: the envirnment vars.
  * @srch: the var to search for.

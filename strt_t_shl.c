@@ -1,7 +1,7 @@
 #include "myshelly.h"
 /**
  * set_strc_vars - a function that I used to the values of the struct members.
- * @st_pt_s: pointer to the struct that I created.
+ * @st_pt_s: pointer to the struct that  created.
  * @s_ac: num of arguments.
  * @s_av: poimter to the arguments.
  * @vs_en: envirnment vars.

@@ -1,6 +1,6 @@
 #include "myshelly.h"
 /**
- * dt_case - a function that I used to control
+ * dt_case - a function that I used to Ctrl
  * the case when the user enters a dot.
  * @c_hlder: the pointer that points to the command
  * @st_pt: pointer to the struct that I created.
