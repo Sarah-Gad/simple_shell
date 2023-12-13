@@ -95,8 +95,7 @@ void rm_extr_sp(char **c_hldr, strugy *st_pt_c)
 	*c_hldr = c_it;
 }
 /**
- * sym_inp_hnd - a function that I used to deal with
- * special symbols in the command input the user enters.
+ * sym_inp_hnd - a function that I used to deal with special symbols.
  * @nw_inp: pointer that points to the modified command.
  * @pl_sym: pointet to the place of the symbol.
  * @s_pt: pointer to the structt.
@@ -104,8 +103,7 @@ void rm_extr_sp(char **c_hldr, strugy *st_pt_c)
 */
 void sym_inp_hnd(char *nw_inp, char **pl_sym, strugy *s_pt)
 {
-	char *en_vrs;
-	char sv_it[70] = "";
+	char *en_vrs, sv_it[70] = "";
 	int lp_ct = 0;
 
 	(*pl_sym)++;
@@ -116,7 +114,6 @@ void sym_inp_hnd(char *nw_inp, char **pl_sym, strugy *s_pt)
 		else
 			int_t_st(sv_it, s_pt->p_id);
 		ad_str(nw_inp, sv_it);
-		nw_inp[20000 - 1] = '\0';
 		(*pl_sym)++;
 		lp_ct = 0;
 	}
@@ -140,19 +137,11 @@ void sym_inp_hnd(char *nw_inp, char **pl_sym, strugy *s_pt)
 
 			en_vrs = s_envrm(s_pt->surr_en, *pl_sym, lp_ct);
 			if (en_vrs)
-			{
 				ad_str(nw_inp, en_vrs);
-				nw_inp[20000 - 1] = '\0';
-				lp_ct = 0;
-			}
 			*pl_sym += lp_ct;
 		}
 		else
-		{
 			ad_str(nw_inp, "$");
-			nw_inp[20000 - 1] = '\0';
-			lp_ct = 0;
-		}
 	}
 }
 /**
