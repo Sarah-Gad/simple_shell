@@ -71,7 +71,9 @@ void rm_extr_sp(char **c_hldr, strugy *st_pt_c)
 		ext_now(st_pt_c);
 	}
 	while ((*c_hldr)[lp_ct] && (*c_hldr)[lp_ct] == ' ')
+	{
 		lp_ct++;
+	}
 	while ((*c_hldr)[lp_ct])
 	{
 		if ((*c_hldr)[lp_ct] == ' ')
@@ -79,7 +81,9 @@ void rm_extr_sp(char **c_hldr, strugy *st_pt_c)
 			c_it[b_dx] = ' ';
 			b_dx++;
 			while ((*c_hldr)[lp_ct] == ' ')
+			{
 				lp_ct++;
+			}
 		}
 		else
 		{
@@ -129,15 +133,15 @@ void sym_inp_hnd(char *nw_inp, char **pl_sym, strugy *s_pt)
 			char *nw_vr = malloc(nw_vr_sz);
 
 			if (nw_vr == NULL)
-			{
 				ext_now(s_pt);
-			}
 			cp_sh_st(nw_vr, *pl_sym);
 			nw_vr[lp_ct] = '\0';
 
 			en_vrs = s_envrm(s_pt->surr_en, *pl_sym, lp_ct);
 			if (en_vrs)
+			{
 				ad_str(nw_inp, en_vrs);
+			}
 			*pl_sym += lp_ct;
 		}
 		else
@@ -183,7 +187,11 @@ int prcs_in(strugy *stv_pt)
 	free(stv_pt->cm_st);
 	stv_pt->cm_st = kp_it;
 	if (kp_it[0] == '\0')
+	{
 		return (1);
+	}
 	else
+	{
 		return (0);
+	}
 }

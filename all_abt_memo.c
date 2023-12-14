@@ -9,10 +9,12 @@
 void *memo_res(void *memo_pt, unsigned int curr_s, unsigned int nw_s)
 {
 	void *n_memo;
-	int m_ind;
+	int m_ind = 0;
 
 	if (curr_s == nw_s)
+	{
 		return (memo_pt);
+	}
 	if (memo_pt == NULL)
 	{
 		memo_pt = malloc(nw_s);
@@ -29,9 +31,11 @@ void *memo_res(void *memo_pt, unsigned int curr_s, unsigned int nw_s)
 		free(n_memo);
 		return (NULL);
 	}
-	for (m_ind = 0; (unsigned int)m_ind < (curr_s < nw_s ? curr_s : nw_s);
-			m_ind++)
+	while ((unsigned int)m_ind < (curr_s < nw_s ? curr_s : nw_s))
+	{
 		((char *)n_memo)[m_ind] = ((char *)memo_pt)[m_ind];
+		m_ind++;
+	}
 	free(memo_pt);
 	return (n_memo);
 }
@@ -52,7 +56,9 @@ char *memo_chk(strugy *sy_pt, char *memo, int *s_memo, int up, int cond)
 	{
 		memo = memo_res(memo, *s_memo, *s_memo + up);
 		if (!memo)
+		{
 			ext_now(sy_pt);
+		}
 		*s_memo += up;
 	}
 	return (memo);

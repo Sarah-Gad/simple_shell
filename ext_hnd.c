@@ -38,8 +38,7 @@ int to_ext_sh(strugy *s_pt)
 			}
 			exit(s_pt->is_ext);
 		}
-		printf("%s: %i: This is illegal number: %s\n",
-				s_pt->whch_p, s_pt->vary, s_pt->cm_st + cm_len);
+		printf("%s: invalid number\n", s_pt->whch_p);
 		s_pt->is_ext = 2;
 		return (1);
 	}

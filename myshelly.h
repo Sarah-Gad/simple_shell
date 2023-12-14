@@ -11,8 +11,6 @@
 #include <unistd.h>
 #include <stdio.h>
 
-#define vals {0, 0, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, NULL}
-
 /**
  * struct struct_vars - a struct I used to
  * manage different aspects of the command.

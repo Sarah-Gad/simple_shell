@@ -28,8 +28,7 @@ int dir_ch(strugy *st_pt)
 		}
 		if (chdir(hld) == -1)
 		{
-			printf("%s: %i: cd: Can not change the directory to %s\n",
-					st_pt->whch_p, st_pt->vary, hld);
+			printf("%s: Can not change the directory.\n", st_pt->whch_p);
 			st_pt->is_ext = 2;
 		}
 		else
@@ -57,7 +56,9 @@ void upd_cd_v(strugy *sc_pt)
 	char *nwcd = malloc(256);
 
 	if (!nwcd)
+	{
 		ext_now(sc_pt);
+	}
 	getcwd(st_curr, 256);
 	nwcd[0] = '\0';
 	ad_str(nwcd, "PWD=");

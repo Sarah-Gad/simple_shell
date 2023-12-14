@@ -15,7 +15,9 @@ char *s_envrm(char **a_str, char *srch, int p_ln)
 	{
 		y_n = cmp_n_2st(a_str[n_ind], srch, p_ln);
 		if (y_n == 0)
+		{
 			return (&a_str[n_ind][p_ln + 1]);
+		}
 		n_ind++;
 	}
 	return (NULL);
