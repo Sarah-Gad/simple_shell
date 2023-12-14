@@ -1,6 +1,6 @@
 #include "myshelly.h"
 /**
- * putchy - a function I used to print a character.
+ * putchy - a function  used to print a character.
  * @ctp: the char to print.
  * Return: num of written chars.
 */
