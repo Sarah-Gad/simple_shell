@@ -169,7 +169,7 @@ ssize_t gt_it(strugy *st_pt_c)
 		st_pt_c->cm_st = NULL;
 	}
 	kpit = read(st_pt_c->wt_d, rd_l + idx_c, 1);
-	while (kpit > 0)
+	while (kpit > 0 && idx_c < 40000)
 	{
 		idx_c++;
 		rd_l = memo_chk(st_pt_c, rd_l, &cntner, 40000, idx_c);
