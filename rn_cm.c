@@ -143,48 +143,49 @@ int mlt_cm(strugy *st_pt, int ind_c, int *mlt)
 	return (1);
 }
 /**
- *  gt_it - a function that I used to obtain the command ffrom  strugy_wt_d.
- *  @st_pt_c: pointer to the struct that I created.
- *  Return: num of chars read or -1.
+ * gt_it - a function that I used to obtain the command ffrom  strugy_wt_d.
+ * @st_pt_c: pointer to the struct that I created.
+ * Return: num of chars read or -1.
 */
 ssize_t gt_it(strugy *st_pt_c)
 {
-	static char cnter[40000];
-	size_t cntr_id = 0;
 	ssize_t kpit;
 	size_t idx_c = 0;
+	int cntner = 20000;
+	char *rd_l;
 
 	if (!(&(st_pt_c->cm_st)))
+	{
 		return (-1);
+	}
+	rd_l = malloc(cntner + 1);
+	if (!rd_l)
+	{
+		ext_now(st_pt_c);
+	}
 	if (st_pt_c->cm_st)
 	{
 		free(st_pt_c->cm_st);
 		st_pt_c->cm_st = NULL;
 	}
-	if (cntr_id == 0)
+	kpit = read(st_pt_c->wt_d, rd_l + idx_c, 1);
+	while (kpit > 0)
 	{
-		kpit = read(st_pt_c->wt_d, cnter, sizeof(cnter) - 1);
-		if (kpit <= 0)
-		{
-			if (kpit == 0 && idx_c == 0)
-				return (-1);
-			else
-				return (kpit);
-		}
-		cnter[kpit] = '\0';
-	}
-	while (cntr_id < sizeof(cnter) - 1)
-	{
-		st_pt_c->cm_st = realloc(st_pt_c->cm_st, idx_c + 2);
-		if (!st_pt_c->cm_st)
-			return (-1);
-		st_pt_c->cm_st[idx_c] = cnter[cntr_id];
-		cntr_id++;
 		idx_c++;
-		if (st_pt_c->cm_st[idx_c - 1] == '\n' || st_pt_c->cm_st[idx_c - 1] == ';')
+		rd_l = memo_chk(st_pt_c, rd_l, &cntner, 40000, idx_c);
+		if (rd_l[idx_c - 1] == '\n' || rd_l[idx_c - 1] == ';')
 			break;
+		kpit = read(st_pt_c->wt_d, rd_l + idx_c, 1);
 	}
-	st_pt_c->cm_st[idx_c] = '\0';
+	if (kpit < 0 || (!kpit && !idx_c))
+	{
+		free(rd_l);
+		return (-1);
+	}
+	if (kpit > 0)
+	{
+		rd_l[idx_c] = '\0';
+	}
+	st_pt_c->cm_st = rd_l;
 	return (idx_c);
 }
-
