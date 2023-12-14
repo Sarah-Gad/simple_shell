@@ -1,6 +1,6 @@
 #include "myshelly.h"
 /**
- * rn_cm_n - a function that I used to run the command the user enters.
+ * rn_cm_n - a function that  used to run the command the user enters.
  * @s_pt: pointer to the struct that I created.
  * @cnter: pointer to the buff that contains the commanddd.
  * Return: returns an int representing the exit status.
