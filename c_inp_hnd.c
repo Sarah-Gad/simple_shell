@@ -4,7 +4,7 @@
  * the case when the user enters a dot.
  * @c_hlder: the pointer that points to the command
  * @st_pt: pointer to the struct that I created.
- * Return: noothing!
+ * Return: nothing!
 */
 void dt_case(char **c_hlder, strugy *st_pt)
 {
